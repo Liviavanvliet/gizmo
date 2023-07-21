@@ -1,20 +1,20 @@
 # hello function
 def hello(name, country = "Finland"):
-    print("Hello", name + ", how are things in", country + "?")
+    return f"Hello, {name}, how are things in {country}?"
 
 # spelling function
 def spell(word):
     s_word = ""
     for letter in word:
         s_word += letter + '.'
-    print("'" + s_word[:-1] + "'")
+    return f'{s_word[:-1]}'
 
 # editing strings
 def relative_path(arr):
-    for i in arr:
-        if i is not None:
-            i = './subjects/mock_recording_'+i+'.rec'
-            print(i)
+    for file in arr:
+        if file is not None:
+            new_file = f'./subjects/mock_recording_{file}.rec'
+            print(new_file)
 
 # creating a class     
 class Gizmo:
@@ -32,3 +32,4 @@ def generate_fibonacci_sequence(n):
         seq.append(a)
         a, b = b, a + b
     return seq
+
