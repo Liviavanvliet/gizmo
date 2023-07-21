@@ -1,11 +1,14 @@
 # hello function
 def hello(name, country = "Finland"):
     print("Hello", name + ", how are things in", country + "?")
+
 # spelling function
 def spell(word):
+    s_word = ""
     for letter in word:
-        print (letter + '.', end = '')
-        
+        s_word += letter + '.'
+    return(s_word[:-1])
+
 # editing strings
 def relative_path(arr):
     for i in arr:
@@ -23,9 +26,8 @@ class Gizmo:
 # function for fibonacci
 def generate_fibonacci_sequence(n):
     seq = []
-    iterator = iter(seq)
     a, b = 0,1
     while len(seq) < n:
         seq.append(a)
         a, b = b, a + b
-    return iterator
+    return seq
