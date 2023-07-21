@@ -7,13 +7,14 @@ def spell(word):
     s_word = ""
     for letter in word:
         s_word += letter + '.'
-    return(s_word[:-1])
+    print("'" + s_word[:-1] + "'")
 
 # editing strings
 def relative_path(arr):
     for i in arr:
-        i = './subjects/mock_recording_'+i+'.rec'
-        print(i)
+        if i is not None:
+            i = './subjects/mock_recording_'+i+'.rec'
+            print(i)
 
 # creating a class     
 class Gizmo:
