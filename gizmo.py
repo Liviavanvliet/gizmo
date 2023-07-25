@@ -24,12 +24,11 @@ class Gizmo:
     def speak(self):
         print(self.name)
     
-# function for fibonacci
+# generator for fibonacci
 def generate_fibonacci_sequence(n):
-    seq = []
     a, b = 0,1
-    while len(seq) < n:
-        seq.append(a)
+    for _ in range(n):
         a, b = b, a + b
-    return seq
+        yield (a)
+
 
