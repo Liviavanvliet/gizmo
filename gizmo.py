@@ -11,21 +11,20 @@ def spell2(word):
     s_word = ""
     for letter in word:
         s_word += letter + '.'
-    return f'{s_word[:-1]}'
+    return f"{s_word[:-1]}"
 
 # spelling function 
 def spell(word):
     s_word = ""
     for letter in word:
         s_word += letter + '.'
-    print("'" + s_word[:-1] + "'")
+    print(s_word[:-1])
     
-
 # editing strings
 def relative_path(arr):
     for file in arr:
         if file is not None:
-            new_file = f'./subjects/mock_recording_{file}.rec'
+            new_file = './subjects/mock_recording_'+file+'.rec'
             print(new_file)
 
 # creating a class     
