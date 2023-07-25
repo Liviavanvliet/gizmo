@@ -22,10 +22,12 @@ def spell(word):
     
 # editing strings
 def relative_path(arr):
+    new_names = []
     for file in arr:
         if file is not None:
             new_file = './subjects/mock_recording_'+file+'.rec'
-            print(new_file)
+            new_names.append(new_file)
+    return(new_names)
 
 # creating a class     
 class Gizmo:
