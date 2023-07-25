@@ -1,13 +1,25 @@
-# hello function
-def hello(name, country = "Finland"):
+# hello function - f formatting
+def hello2(name, country = "Finland"):
     return f"Hello, {name}, how are things in {country}?"
 
-# spelling function
-def spell(word):
+# hello function
+def hello(name, country = 'Finland'):
+    print("Hello", name + ", how are things in", country + "?")
+
+# spelling function - f formatting
+def spell2(word):
     s_word = ""
     for letter in word:
         s_word += letter + '.'
     return f'{s_word[:-1]}'
+
+# spelling function 
+def spell(word):
+    s_word = ""
+    for letter in word:
+        s_word += letter + '.'
+    print("'" + s_word[:-1] + "'")
+    
 
 # editing strings
 def relative_path(arr):
