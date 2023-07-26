@@ -71,15 +71,8 @@ def generate_fibonacci_sequence(n):
     >>> list(generate_fibonacci_sequence(10))
     [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
     """
-
-    result = []
-    if n == 0:
-        return result  # Return an empty list when n is 0
-
-    result.append(0)  # Add 0 as the first value
+    yield 0  # Yield 0 as the first value
     a, b = 0, 1
-    for _ in range(n - 1):  # We already added the first value (0), so n - 1 iterations needed
+    for _ in range(n - 1):  # We already yielded the first value (0), so n - 1 iterations needed
         a, b = b, a + b
-        result.append(a)
-
-    return result
+        yield a
