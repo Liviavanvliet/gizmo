@@ -1,4 +1,7 @@
 # hello function - f formatting
+import shutil
+
+
 def hello2(name, country = "Finland"):
     return f"Hello, {name}, how are things in {country}?"
 
@@ -53,7 +56,7 @@ def generate_fibonacci_sequence(n):
 
     Yields
     ------
-    fibonacci_number : int
+    int
         The next number in the Fibonacci sequence.
 
     Extended Summary
@@ -68,12 +71,15 @@ def generate_fibonacci_sequence(n):
     >>> list(generate_fibonacci_sequence(10))
     [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
     """
-    yield 0  # Yield 0 as the first value
+
+    result = []
+    if n == 0:
+        return result  # Return an empty list when n is 0
+
+    result.append(0)  # Add 0 as the first value
     a, b = 0, 1
-    for _ in range(n - 1):  # We already yielded the first value (0), so n - 1 iterations needed
+    for _ in range(n - 1):  # We already added the first value (0), so n - 1 iterations needed
         a, b = b, a + b
-        yield a
+        result.append(a)
 
-
-
-
+    return result
