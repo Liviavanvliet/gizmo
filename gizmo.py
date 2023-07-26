@@ -73,6 +73,10 @@ def generate_fibonacci_sequence(n):
     """
     yield 0  # Yield 0 as the first value
     a, b = 0, 1
-    for _ in range(n - 1):  # We already yielded the first value (0), so n - 1 iterations needed
-        a, b = b, a + b
-        yield a
+    try:
+        for _ in range(n - 1):  # We already yielded the first value (0), so n - 1 iterations needed
+            assert b != 0, "Divisor cannot be zero in Fibonacci sequence."
+            a, b = b, a + b
+            yield a
+    except AssertionError as e:
+        print(f"An AssertionError occurred: {e}")
