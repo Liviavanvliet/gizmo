@@ -39,9 +39,41 @@ class Gizmo:
     
 # generator for fibonacci
 def generate_fibonacci_sequence(n):
-    a, b = 0,1
-    for _ in range(n):
+    """
+    Generate a Fibonacci sequence up to the nth element.
+
+    This function generates a Fibonacci sequence of length n starting from 0 and 1.
+    The Fibonacci sequence is a series of numbers in which each number is the sum
+    of the two preceding ones.
+
+    Parameters
+    ----------
+    n : int
+        The length of the Fibonacci sequence to generate.
+
+    Yields
+    ------
+    fibonacci_number : int
+        The next number in the Fibonacci sequence.
+
+    Extended Summary
+    ----------------
+    The `generate_fibonacci_sequence` function takes an integer `n` as input and
+    generates the Fibonacci sequence of length `n`. It starts with 0 and 1 as the
+    first two numbers and then generates subsequent Fibonacci numbers by adding the
+    last two numbers in the sequence.
+
+    Example
+    -------
+    >>> list(generate_fibonacci_sequence(10))
+    [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+    """
+    yield 0  # Yield 0 as the first value
+    a, b = 0, 1
+    for _ in range(n - 1):  # We already yielded the first value (0), so n - 1 iterations needed
         a, b = b, a + b
-        yield (a)
+        yield a
+
+
 
 
